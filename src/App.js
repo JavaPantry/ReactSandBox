@@ -1,41 +1,42 @@
 import React, { Component } from 'react';
+//import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 
-import PartsList from './components/partList';
+import PartsView from './components/partsView';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {parts: [
-      {"multipleControl":"N","returnControl":"0","pprtcd":"07AA75062      ","pprtn1":"DPS PART                      ","pprtst":"07AA75062                    ","pcat":"231","pprdcd":"D ","pcstlm":6.5,"pcst":6.5,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"20AA15150      ","pprtn1":"DPS PART                      ","pprtst":"20AA15150                     ","pcat":"231","pprdcd":"D ","pcstlm":2.17,"pcst":2.17,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"50GAA70400     ","pprtn1":"DPS PART                      ","pprtst":"50GAA70400                    ","pcat":"231","pprdcd":"D ","pcstlm":0.01,"pcst":0.01,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"56AA20700      ","pprtn1":"DPS PART                      ","pprtst":"56AA20700                     ","pcat":"231","pprdcd":"D ","pcstlm":4.91,"pcst":4.91,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"56AA207800     ","pprtn1":"DPS PART                      ","pprtst":"56AA207800                    ","pcat":"231","pprdcd":"D ","pcstlm":0.01,"pcst":0.01,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"56AA42541      ","pprtn1":"DPS PART                      ","pprtst":"56AA42541                     ","pcat":"231","pprdcd":"D ","pcstlm":15.56,"pcst":15.56,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"56AA42701      ","pprtn1":"DPS PART                      ","pprtst":"56AA42701                     ","pcat":"231","pprdcd":"D ","pcstlm":1.83,"pcst":1.83,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"56AA53160      ","pprtn1":"DPS PART                      ","pprtst":"56AA53160                     ","pcat":"231","pprdcd":"D ","pcstlm":1.15,"pcst":1.15,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"56AA6020       ","pprtn1":"DPS PART                      ","pprtst":"56AA6020                      ","pcat":"231","pprdcd":"D ","pcstlm":0.01,"pcst":0.01,"pvndc1":"OCEUSA"}
-      ,{"multipleControl":"N","returnControl":"0","pprtcd":"56AA77180      ","pprtn1":"DPS PART                      ","pprtst":"56AA77180                     ","pcat":"231","pprdcd":"D ","pcstlm":10.98,"pcst":10.98,"pvndc1":"OCEUSA"}
-    ]};
   }
 
   render() {
     return (
+
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React, Alexei</h1>
         </header>
+        <div className="navbar navbar-default">
+            <ul className="nav nav-pills navbar-nav ">
+              <li><Link to="/home">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/topics">Topics</Link></li>
+          </ul>
+        </div>
+
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          v #0.21 Pull <code>PartsView</code> from App.js
         </p>
-        <PartsList parts={this.state.parts}/>
+        {this.props.children}
       </div>
     );
   }
+  // {this.props.children} in render() Cause: Warning: You should not use <Route component> and <Route children> in the same route; <Route children> will be ignored
+  //<PartsView parts={this.state.parts}/>
 }
 
 export default App;

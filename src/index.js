@@ -1,33 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 //import History from 'history';
 
 import './index.css';
 import App from './App';
+import PartsView from './components/partsView';
 import registerServiceWorker from './registerServiceWorker';
 //<App/>
 
 const RootView = () => (
   <Router>
-  <div>
-    <div className="navbar navbar-default">
-        <ul className="nav nav-pills navbar-nav ">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/topics">Topics</Link></li>
-      </ul>
-    </div>
-      <Route exact path="/" component={App} />
-      <Route path="/about" component={Home} />
-      <Route path="/topics" component={About} />
-    </div>
+  <App>
+    <Route path="/home" component={PartsView} />
+    <Route path="/about" component={About} />
+    <Route path="/topics" component={Topics} />
+  </App>
   </Router>
 );
 
-const Home = () => (
+const Topics = () => (
   <div>
-    <h2>Home</h2>
+    <h2>Topics</h2>
   </div>
 );
 
