@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import PartsList from './partList';
+import PartsList from './components/partList';
+
 class App extends Component {
 
   constructor(props) {

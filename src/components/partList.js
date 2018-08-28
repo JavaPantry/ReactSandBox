@@ -2,10 +2,9 @@
 
 import Part from './part';
 
-const React = require('react');
-const ReactDOM = require('react-dom')
+import React, { Component } from 'react';
 
-class PartsList extends React.Component {
+class PartsList extends Component {
 
 	constructor(props) {
 		super(props);
