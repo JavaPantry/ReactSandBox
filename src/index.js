@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 //import History from 'history';
 
 import './index.css';
@@ -14,9 +15,18 @@ const RootView = () => (
   <App>
     <Route path="/home" component={PartsView} />
     <Route path="/about" component={About} />
+    <Route path="/part/:partId" component={PartDetail} />
     <Route path="/topics" component={Topics} />
   </App>
   </Router>
+);
+
+
+const PartDetail = () => (
+    <div>
+        <h2>Part Detail</h2>
+        <Link to="/home">Back to list</Link>
+    </div>
 );
 
 const Topics = () => (

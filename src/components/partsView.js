@@ -23,7 +23,9 @@ class PartsView extends Component {
 
 	render() {
 		return (
-			<PartsList parts={this.state.parts}/>
+			<div>
+				<PartsList parts={this.state.parts}/>
+			</div>
 		)
 	}
 }
