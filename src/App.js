@@ -35,8 +35,6 @@ class App extends Component {
       </div>
     );
   }
-  // {this.props.children} in render() Cause: Warning: You should not use <Route component> and <Route children> in the same route; <Route children> will be ignored
-  //<PartsView parts={this.state.parts}/>
 }
 
 export default App;
