@@ -24,7 +24,14 @@ const RootView = () => (
 
 const PartDetail = () => (
     <div>
-        <h2>Part Detail</h2>
+
+        <div>
+            <h2>Part Detail</h2>
+            <input type="text" placeholder="your email" className="form-control"></input>
+            <textarea type="text" placeholder="your message" className="form-control"></textarea>
+            <button className="btn btn-primary">Save</button>
+        </div>
+
         <Link to="/home">Back to list</Link>
     </div>
 );
