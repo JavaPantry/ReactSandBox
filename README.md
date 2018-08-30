@@ -14,7 +14,7 @@ This is LearnAsYouGo scaffolding project for ReactJs app
 - Add Router from bs Navigation
 
 ## v0.2 initial commit
-- extract PartsList to  partList.js
+- extract PartsList to  PartsList.js
 
 ## Introduce Router
 - import react-router-dom

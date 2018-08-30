@@ -58,7 +58,7 @@ class PartDetail extends Component {
                 <div>
                     <h2>Part Detail</h2>  <h3> {this.props.match.params.partId}</h3>
                     <form action="#">
-                        <input type="text" placeholder="multipleControl" className="form-control" value={`${this.state.part.multipleControl}`} ></input>
+                        <input type="text" placeholder="multipleControl" className="form-control" ></input>  {this.state.part.multipleControl}
                         <input type="text" placeholder="returnControl" className="form-control" value={`${this.state.part.returnControl}`}></input>
                         <input type="text" placeholder="pprtcd" className="form-control" value={`${this.state.part.pprtcd}`}></input>
                         <input type="text" placeholder="pprtn1" className="form-control" value={`${this.state.part.pprtn1}`}></input>

@@ -3,12 +3,14 @@
 import Part from './part';
 
 import React, { Component } from 'react';
+import './PartsList.css';
 
 class PartsList extends Component {
 
 	constructor(props) {
 		super(props);
 	}
+
 
 	render() {
 		var parts = this.props.parts.map(part =>
@@ -18,12 +20,14 @@ class PartsList extends Component {
 		return (
 			<div>
 				<table>
+					<thead>
+					<tr>
+						<th>Part Code</th>
+						<th>Part Name</th>
+						<th>Description</th>
+					</tr>
+					</thead>
 					<tbody>
-						<tr>
-							<th>Part Code</th>
-							<th>Part Name</th>
-							<th>Description</th>
-						</tr>
 						{parts}
 					</tbody>
 				</table>

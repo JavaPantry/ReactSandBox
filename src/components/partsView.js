@@ -1,6 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
-import PartsList from './partList';
+import PartsList from './PartsList';
 
 class PartsView extends Component {
 
@@ -22,7 +22,7 @@ class PartsView extends Component {
 	}
 
     componentDidMount() {
-        fetch("data/parts.json")
+        fetch("/data/parts.json")
             .then(res => res.json())
             .then(
                 (result) => {
