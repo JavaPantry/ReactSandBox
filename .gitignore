@@ -22,3 +22,6 @@ yarn-error.log*
 
 # intellyJ
 .idea
+
+package-lock.json
+yarn.lock
