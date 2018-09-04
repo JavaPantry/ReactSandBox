@@ -1,58 +1,31 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
 
-/*
-const PartDetail = (props) => (
-    <div>
-        <div>
-            <h2>Part Detail</h2>  <h3>{props.match.params.partId}</h3>
-            <form>
-            <input type="text" placeholder="your email" className="form-control"></input>
-            <textarea type="text" placeholder="your message" className="form-control"></textarea>
-            <button className="btn btn-primary">Save</button>
-            </form>
-        </div>
-        <Link to="/home">Back to list</Link>
-    </div>
-);
-*/
+import axios from 'axios';
 
 class PartDetail extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {part:{}};
+        this.state = {
+            ROOT_URL: 'http://localhost:3000/parts/',
+            part:{}
+        };
     }
 
     componentDidMount() {
-        fetch("/data/partData.json")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        part: result
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
+        axios.get(this.state.ROOT_URL+this.props.match.params.partId)
+            .then(response => {
+                this.setState({
+                    isLoaded: true,
+                    part: response.data
+                });
+            })
+            .catch(error => console.log(error));
     }
 
 
     render() {
-        /*var parts = this.props.parts.map(part =>
-            <Part key={part.pprtcd} part={part}/>
-        );
-
-
-
-        */
-
         return (
             <div>
                 <div>

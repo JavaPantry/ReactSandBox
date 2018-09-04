@@ -1,0 +1,46 @@
+This is LearnAsYouGo scaffolding project for ReactJs app
+
+== v0.7
+* Switch from fetch API to axios in partsView and partDetail components
+** `npm install axios -save`
+** this install + axios@0.18.0
+* add json server
+** `npm install json-server -g`
+** copy public/data/partData.json and parts.json into db.json
+** Run the database based on our db.json file
+** `json-server db.json --watch`
+** check responses in browser
+*** `http://localhost:3000/parts` and
+*** `http://localhost:3000/parts/1`
+
+== v0.6
+
+* Add reactive behaviour to parts table
+* Add use of fetch API to retrieve parts
+* Create React App includes a polyfill for `fetch()` so you can use it without worrying about the browser support
+
+== v0.5
+
+* Add links with parameters to Part Detail Component
+* Add PartDetail Component
+* access url parameter from PartDetail Component
+
+== v0.4
+
+* load dummy parts in PartsView.js
+* use App.js as layout inside router
+* do the routing in index.js and use links in navbar in App.js
+
+== v_0.3
+
+* Add Router from bs Navigation
+
+== v0.2 initial commit
+
+* extract PartsList to PartsList.js
+
+== Introduce Router
+
+* import react-router-dom
+* move part-related stuf to components folder
+* add bootstrap 3 css
