@@ -34,24 +34,63 @@ class PartDetail extends Component {
         this.setState(state);
     }
 
+    handleSubmit(){
+        axios.put(this.state.ROOT_URL+this.props.match.params.partId,this.state.part)
+            .then(response => {
+                console.log("form submit response: '"+response.data+"'");
+                /*this.setState({
+                    isLoaded: true,
+                    part: response.data
+                });*/
+                this.props.router.push('/home')
+            })
+            .catch(error => console.log(error));
+    }
+
     render() {
         return (
-            <div>
-                <div>
+            <div className="container">
+                <div className="panel panel-default">
                     <h2>Part Detail</h2>  <h3> {this.props.match.params.partId}</h3>
-                    <form action="#">
-                        <input type="text" placeholder="multipleControl" className="form-control" ></input>  {this.state.part.multipleControl}
-                        <input type="text" placeholder="returnControl" className="form-control" value={`${this.state.part.returnControl}`}></input>
-                        <input type="text" placeholder="pprtcd" className="form-control" value={`${this.state.part.pprtcd}`} onChange={this.handlepPrtcdChange.bind(this)}></input> {this.state.part.pprtcd}
-                        <input type="text" placeholder="pprtn1" className="form-control" value={`${this.state.part.pprtn1}`}></input>
-                        <input type="text" placeholder="pprtst" className="form-control" value={`${this.state.part.pprtst}`}></input>
-                        <input type="text" placeholder="pcat" className="form-control" value={`${this.state.part.pcat}`}></input>
-                        <input type="text" placeholder="pprdcd" className="form-control" value={`${this.state.part.pprdcd}`}></input>
-                        <input type="text" placeholder="pcstlm" className="form-control" value={`${this.state.part.pcstlm}`}></input>
-                        <input type="text" placeholder="pcst" className="form-control" value={`${this.state.part.pcst}`}></input>
-                        <input type="text" placeholder="pvndc1" className="form-control" value={`${this.state.part.pvndc1}`}></input>
+                    <form className="form-horizontal" onSubmit={this.handleSubmit.bind(this)}>
+                        <input type="hidden" value={`${this.state.part.id}`} ></input>
+                        <div className="form-group">
+                            <input type="text" placeholder="multipleControl" className="form-control" value={`${this.state.part.multipleControl}`}></input>  {this.state.part.multipleControl}
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="returnControl" className="form-control" value={`${this.state.part.returnControl}`}></input>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="pprtcd" className="form-control" value={`${this.state.part.pprtcd}`} onChange={this.handlepPrtcdChange.bind(this)}></input> {this.state.part.pprtcd}
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="pprtn1" className="form-control" value={`${this.state.part.pprtn1}`}></input>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="pprtst" className="form-control" value={`${this.state.part.pprtst}`}></input>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="pcat" className="form-control" value={`${this.state.part.pcat}`}></input>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="pprdcd" className="form-control" value={`${this.state.part.pprdcd}`}></input>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="pcstlm" className="form-control" value={`${this.state.part.pcstlm}`}></input>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="pcst" className="form-control" value={`${this.state.part.pcst}`}></input>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="pvndc1" className="form-control" value={`${this.state.part.pvndc1}`}></input>
+                        </div>
+
                         <br/>
-                        <button className="btn btn-primary">Save</button>
+                        <div className="form-group">
+                            <div className="col-sm-offset-2 col-sm-8">
+                            <button type="submit" className="btn btn-primary">Save</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <Link to="/home">Back to list</Link>
