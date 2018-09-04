@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Part = (props) => (
   <tr>
-      <td><Link to={`/part/${props.part.pprtcd}`}> {props.part.pprtcd} </Link></td>
+      <td><Link to={`/part/${props.part.id}`}> {props.part.pprtcd} </Link></td>
       <td>{props.part.pprtn1}</td>
       <td>{props.part.pcat}</td>
       <td>{props.part.pprdcd}</td>
