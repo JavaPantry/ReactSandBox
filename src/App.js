@@ -21,7 +21,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React, Alexei</h1>
+          <h1 className="App-title">ReactJs Scaffolding Application</h1>
         </header>
         <div className="navbar navbar-default">
             <ul className="nav nav-pills navbar-nav ">

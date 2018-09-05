@@ -1,5 +1,10 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
+import { PropTypes} from 'prop-types';
+/*
+ *import { Link, withRouter } from 'react-router-dom';
+ */
+
 
 import axios from 'axios';
 
@@ -13,6 +18,21 @@ class PartDetail extends Component {
         };
         //this.handlepPrtcdChange = this.handlepPrtcdChange.bind(this);
         //after binding u can use in form `<input type="text" placeholder="pprtcd" className="form-control" value={`${this.state.part.pprtcd}`} onChange={this.handlepPrtcdChange}></input>`
+    }
+
+    handleSubmit(){
+        axios.put(this.state.ROOT_URL+this.props.match.params.partId,this.state.part)
+            .then(response => {
+                console.log("form submit response: '"+response.data+"'");
+                /*this.setState({
+                    isLoaded: true,
+                    part: response.data
+                });*/
+
+            })
+            .catch(error => console.log(error));
+
+        this.props.history.push('/home');
     }
 
     componentDidMount() {
@@ -34,18 +54,7 @@ class PartDetail extends Component {
         this.setState(state);
     }
 
-    handleSubmit(){
-        axios.put(this.state.ROOT_URL+this.props.match.params.partId,this.state.part)
-            .then(response => {
-                console.log("form submit response: '"+response.data+"'");
-                /*this.setState({
-                    isLoaded: true,
-                    part: response.data
-                });*/
-                this.props.router.push('/home')
-            })
-            .catch(error => console.log(error));
-    }
+
 
     render() {
         return (
