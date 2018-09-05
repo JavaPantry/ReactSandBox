@@ -2,14 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-//import History from 'history';
-
 import './index.css';
 import App from './App';
 import PartsView from './components/partsView';
 import PartDetail from './components/partDetail';
 import registerServiceWorker from './registerServiceWorker';
-//<App/>
 
 const RootView = () => (
   <Router>
@@ -21,9 +18,6 @@ const RootView = () => (
   </App>
   </Router>
 );
-
-
-
 
 const Topics = () => (
   <div>
