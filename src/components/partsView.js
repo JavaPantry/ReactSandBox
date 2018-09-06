@@ -1,6 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
-import axios from 'axios';
+import { API } from '../utils/api';
 
 import PartsList from './PartsList';
 
@@ -9,14 +9,13 @@ class PartsView extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            ROOT_URL: 'http://localhost:3000/parts/',
 		    parts: []
 		};
 
 	}
 
     componentDidMount() {
-        axios.get(this.state.ROOT_URL)
+        API.get()
             .then(response => {
                 this.setState({
                     isLoaded: true,
