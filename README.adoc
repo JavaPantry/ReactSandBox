@@ -1,5 +1,22 @@
 This is LearnAsYouGo scaffolding project for ReactJs app
 
+To run project start json server first
+
+`\ReactSandBox>json-server db.json --watch`
+
+then app itself and chooshe port 3001
+
+`\ReactSandBox>yarn start`
+
+== v0.8
+* Complete page flow in scafforlding project
+**  styling with bootstrap
+**  navigation bar with menu
+**  routing to different views
+**  render list of entities
+**  edit entity in form
+**  submit form and navigate back to home
+
 == v0.7
 * Switch from fetch API to axios in partsView and partDetail components
 ** `npm install axios -save`

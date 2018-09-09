@@ -1,22 +1,37 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
+import { PropTypes} from 'prop-types';
 
-import axios from 'axios';
+import { API } from '../utils/api';
 
 class PartDetail extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            ROOT_URL: 'http://localhost:3000/parts/',
             part:{}
         };
         //this.handlepPrtcdChange = this.handlepPrtcdChange.bind(this);
         //after binding u can use in form `<input type="text" placeholder="pprtcd" className="form-control" value={`${this.state.part.pprtcd}`} onChange={this.handlepPrtcdChange}></input>`
     }
 
+    handleSubmit(){
+        API.put(this.props.match.params.partId,this.state.part)
+            .then(response => {
+                console.log("form submit response: '"+response.data+"'");
+                /*this.setState({
+                    isLoaded: true,
+                    part: response.data
+                });*/
+
+            })
+            .catch(error => console.log(error));
+
+        this.props.history.push('/home');
+    }
+
     componentDidMount() {
-        axios.get(this.state.ROOT_URL+this.props.match.params.partId)
+        API.get(this.props.match.params.partId)
             .then(response => {
                 this.setState({
                     isLoaded: true,
@@ -34,18 +49,7 @@ class PartDetail extends Component {
         this.setState(state);
     }
 
-    handleSubmit(){
-        axios.put(this.state.ROOT_URL+this.props.match.params.partId,this.state.part)
-            .then(response => {
-                console.log("form submit response: '"+response.data+"'");
-                /*this.setState({
-                    isLoaded: true,
-                    part: response.data
-                });*/
-                this.props.router.push('/home')
-            })
-            .catch(error => console.log(error));
-    }
+
 
     render() {
         return (

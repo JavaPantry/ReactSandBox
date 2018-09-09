@@ -19,30 +19,28 @@ class App extends Component {
     return (
 
       <div className="App">
+{/*
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React, Alexei</h1>
+          <h5 className="App-title">ReactJs Scaffolding Application</h5>
         </header>
+*/}
         <div className="navbar navbar-default">
+
             <ul className="nav nav-pills navbar-nav ">
-              <li><Link to="/home">Home</Link></li>
+              <li><img src={logo} className="App-logo" alt="logo" /></li>
+              <li><Link to="/home">Parts</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/topics">Topics</Link></li>
-          </ul>
+            </ul>
         </div>
 
         <p className="App-intro">
-          v #0.21 Pull <code>PartsView</code> from App.js
+          v #0.8
         </p>
         {this.props.children}
       </div>
     );
   }
 }
-
-/*App.contextTypes = {
-    router: React.PropTypes.object.isRequired
-}*/
-
 
 export default App;

@@ -4,7 +4,7 @@
       "id": 1,
       "multipleControl": "N",
       "returnControl": "0",
-      "pprtcd": "6666666",
+      "pprtcd": "787878",
       "pprtn1": "DPS PART                      ",
       "pprtst": "07AA75062                    ",
       "pcat": "231",
@@ -17,7 +17,7 @@
       "id": 2,
       "multipleControl": "N",
       "returnControl": "0",
-      "pprtcd": "9991",
+      "pprtcd": "1234567890",
       "pprtn1": "DPS PART                      ",
       "pprtst": "20AA15150                     ",
       "pcat": "231",
@@ -30,7 +30,7 @@
       "id": 3,
       "multipleControl": "N",
       "returnControl": "0",
-      "pprtcd": "50GAA70400     ",
+      "pprtcd": "111111",
       "pprtn1": "DPS PART                      ",
       "pprtst": "50GAA70400                    ",
       "pcat": "231",
@@ -129,6 +129,24 @@
       "pcstlm": 10.98,
       "pcst": 10.98,
       "pvndc1": "OCEUSA"
+    }
+  ],
+  "persons": [
+    {
+      "id": 1,
+      "name": "Alexei"
+    },
+    {
+      "id": 2,
+      "name": "Bohdan"
+    },
+    {
+      "id": 3,
+      "name": "Hong"
+    },
+    {
+      "id": 4,
+      "name": "Igor"
     }
   ]
 }
