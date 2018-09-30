@@ -1,3 +1,5 @@
+= ReactSandBox
+
 This is LearnAsYouGo scaffolding project for ReactJs app
 
 To run project start json server first
